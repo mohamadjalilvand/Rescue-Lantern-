@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rescue Lantern™</title>
+<meta name="description" content="">
+<meta property="og:title" content="Rescue Lantern™"><meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0d12;--panel:#12161e;--panel2:#161b24;--line:rgba(240,236,228,.09);--line2:rgba(240,236,228,.16);--cu:#c4884c;--cu2:#dda36a;--cus:rgba(196,136,76,.12);--st:#7fa2c2;--sts:rgba(127,162,194,.1);--tx:#f2ede4;--mu:rgba(242,237,228,.68);--di:rgba(242,237,228,.45)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;font-family:'Vazirmatn',system-ui,sans-serif;background:radial-gradient(1000px 500px at 15% -10%,rgba(196,136,76,.07),transparent 60%),var(--bg);color:var(--tx);line-height:1.85;padding-inline:0}
+body:before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(240,236,228,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(240,236,228,.035) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 100% 60% at 50% 0,#000,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 100% 60% at 50% 0,#000,transparent 75%)}
+a{color:inherit;text-decoration:none}:focus-visible{outline:2px solid var(--cu2);outline-offset:3px}
+.w{max-width:1140px;margin-inline:auto;padding-inline:20px}
+nav{position:sticky;top:0;z-index:50;background:rgba(10,13,18,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+nav .w{display:flex;align-items:center;gap:14px;min-height:60px}
+.logo{font-weight:800;color:var(--cu2);white-space:nowrap}
+.links{display:flex;gap:4px;margin-inline-start:auto;flex-wrap:wrap}
+.links a{padding:6px 10px;border-radius:8px;color:var(--mu);font-size:.88rem}.links a:hover,.links a.on{color:var(--tx);background:var(--cus)}
+.lang{position:relative;margin-inline-start:auto}.links+.lang{margin-inline-start:0}
+.lang button{background:var(--panel2);color:var(--tx);border:1px solid var(--line2);border-radius:10px;padding:6px 12px;font:inherit;font-size:.88rem;cursor:pointer;min-height:40px}
+.lang ul{display:none;position:absolute;inset-inline-end:0;top:46px;margin:0;padding:6px;list-style:none;background:var(--panel);border:1px solid var(--line2);border-radius:12px;min-width:140px}
+.lang.open ul{display:block}.lang li button{width:100%;text-align:start;border:0;background:none;padding:8px 10px;border-radius:8px}
+.lang li button:hover,.lang li button[aria-current=true]{background:var(--cus);color:var(--cu2)}
+@media(max-width:860px){.links{display:none}.lang{margin-inline-start:auto}}
+section{padding:72px 0;border-bottom:1px solid var(--line)}
+.hero{padding:56px 0 72px}
+.cover{position:relative;border:1px solid var(--line2);border-radius:26px;background:linear-gradient(180deg,var(--panel2),var(--panel));overflow:hidden;padding:clamp(24px,5vw,56px)}
+.cover:after{content:'';position:absolute;inset-inline-end:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--cu),transparent 85%)}
+.cover svg.bg{position:absolute;inset:0;width:100%;height:100%;opacity:.5;pointer-events:none}
+.cover>*:not(svg){position:relative}
+.award{display:inline-flex;gap:10px;align-items:center;border:1.5px solid var(--cu);background:var(--cus);color:var(--cu2);border-radius:999px;padding:7px 18px;font-weight:700;font-size:.85rem;letter-spacing:.04em}
+.note{font-size:.78rem;color:var(--di);margin:6px 0 0}
+h1{font-size:clamp(1.9rem,5vw,3.4rem);line-height:1.3;margin:18px 0 12px;font-weight:800;max-width:18em}
+h2{font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.4;margin:0;font-weight:800}
+h3{margin:0 0 6px;font-size:1.05rem}
+.sub{color:var(--st);font-size:1.05rem;max-width:44em;font-weight:600}
+.p{color:var(--mu);max-width:48em}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.b{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:12px;font-weight:700;border:1.5px solid var(--cu);cursor:pointer}
+.b1{background:var(--cu);color:#0a0d12}.b1:hover{background:var(--cu2)}.b2{color:var(--cu2)}.b2:hover{background:var(--cus)}
+.head{display:flex;gap:16px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:28px}
+.num{width:44px;height:44px;min-width:44px;display:grid;place-items:center;border-radius:12px;border:1.5px solid var(--cu);color:var(--cu2);background:var(--cus);font-weight:800;direction:ltr}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:24px}.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.g4{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+@media(max-width:860px){.g2,.g3{grid-template-columns:1fr}}
+.card{background:var(--panel2);border:1px solid var(--line);border-radius:18px;padding:24px;height:100%}
+.card p{margin:0;color:var(--mu);font-size:.95rem}.card h3{color:var(--tx)}
+.tag{display:inline-block;padding:3px 12px;border-radius:999px;background:var(--sts);color:var(--st);border:1px solid rgba(127,162,194,.25);font-size:.78rem;font-weight:700;margin:3px}
+.tag.opt{border-style:dashed;color:var(--cu2);background:var(--cus);border-color:var(--cu)}
+ul.cl{list-style:none;padding:0;margin:14px 0}ul.cl li{position:relative;padding-inline-start:24px;margin:8px 0;color:var(--mu)}ul.cl li:before{content:'—';position:absolute;inset-inline-start:0;color:var(--cu)}
+.flip{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:22px;font-weight:800;font-size:.9rem;letter-spacing:.03em}
+.flip span:first-child{color:var(--di)}.flip span:last-child{color:var(--cu2)}
+.arch{display:grid;grid-template-columns:1fr 2fr 1fr;gap:18px;align-items:center;margin:28px 0}
+@media(max-width:860px){.arch{grid-template-columns:1fr}}
+.flow{display:flex;flex-direction:column;gap:6px;align-items:stretch}
+.node{border:1px solid var(--cu);background:var(--cus);border-radius:12px;padding:10px 14px;text-align:center;font-size:.85rem;font-weight:700;direction:ltr}
+.node.rtlok{direction:inherit}.arrow{text-align:center;color:var(--cu2);line-height:1;animation:fl 2s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(3px);opacity:.5}}
+.side{border:1.5px dashed var(--st);border-radius:14px;padding:14px;color:var(--st);font-size:.88rem;text-align:center}
+.legend{font-size:.78rem;color:var(--di);display:flex;gap:18px;flex-wrap:wrap}
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
+.tl .st{padding:0 18px;border-inline-start:2px solid var(--line2);position:relative}
+.tl .st:before{content:'';position:absolute;inset-inline-start:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--cu)}
+.tl h3{color:var(--cu2)}
+@media(max-width:860px){.tl{grid-template-columns:1fr;gap:28px}}
+.qual{border-inline-start:3px solid var(--st);padding:8px 16px;color:var(--di);font-size:.85rem;margin-top:26px}
+footer{padding:64px 0 40px;background:var(--panel)}
+.ct{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:28px 0}
+.c{display:flex;gap:12px;align-items:center;min-height:56px;padding:12px 16px;border:1px solid var(--line2);border-radius:14px;background:var(--panel2);direction:ltr;word-break:break-all}
+.c svg{flex:none;width:22px;height:22px;stroke:var(--cu2);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+a.c:hover{border-color:var(--cu)}.c.off{opacity:.55;border-style:dashed}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+.rv{opacity:0;transform:translateY(14px);transition:.6s}.rv.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<nav><div class="w"><a class="logo" href="#s1">RESCUE LANTERN™</a><div class="links" id="links"></div>
+<div class="lang" id="lang"><button id="lb" aria-haspopup="listbox" aria-expanded="false" aria-label="Language">EN ▾</button><ul id="lm" role="listbox"></ul></div></div></nav>
+
+<main>
+<section id="s1" class="hero"><div class="w"><div class="cover">
+<svg class="bg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#7fa2c2" stroke-opacity=".35"><ellipse cx="600" cy="200" rx="40" ry="60"/><ellipse cx="600" cy="200" rx="90" ry="130"/><ellipse cx="600" cy="200" rx="160" ry="230"/><ellipse cx="600" cy="200" rx="250" ry="340"/><path d="M0 330H800" stroke="#c4884c"/></g><g fill="#c4884c"><circle cx="520" cy="250" r="4"/><circle cx="640" cy="170" r="4"/><circle cx="570" cy="120" r="3"/></g></svg>
+<span class="award" id="award"></span><p class="note" id="awardNote"></p>
+<h1 id="h1"></h1><p class="sub" id="sub"></p><p class="p" id="intro"></p>
+<div class="btns"><a class="b b1" href="#contact" id="cta1"></a><a class="b b2" href="#s3" id="cta2"></a></div></div></div></section>
+
+<section id="s2"><div class="w rv"><div class="head"><span class="num">02</span><h2 id="s2t"></h2></div>
+<div class="g2"><div class="card"><h3 id="chT"></h3><p id="chP"></p><ul class="cl" id="chL"></ul></div><div class="card"><h3 id="soT"></h3><p id="soP"></p>
+<div class="flip"><span id="frag"></span><span aria-hidden="true">→</span><span id="integ"></span></div></div></div></div></section>
+
+<section id="s3"><div class="w rv"><div class="head"><span class="num">03</span><h2 id="s3t"></h2></div>
+<div class="g4" id="comps"></div>
+<div class="arch"><div class="side" id="sk"></div><div class="flow" id="flow"></div><div class="side" id="dr"></div></div>
+<div class="legend"><span id="lg1"></span><span id="lg2"></span></div><p class="note" id="aiNote"></p></div></section>
+
+<section id="s4"><div class="w rv"><div class="head"><span class="num">04</span><h2 id="s4t"></h2></div>
+<div class="tl" id="tl"></div><div style="margin-top:28px" id="techs"></div><p class="qual" id="qual"></p></div></section>
+
+<section id="s5"><div class="w rv"><div class="head"><span class="num">05</span><h2 id="s5t"></h2></div>
+<p class="p" id="s5p"></p><div class="g3" id="apps" style="margin:24px 0"></div><p class="p" id="road"></p>
+<div class="g3" id="paths" style="margin-top:24px"></div>
+<div class="btns"><a class="b b1" href="#contact" id="cta3"></a><a class="b b2" href="#contact" id="cta4"></a></div></div></section>
+</main>
+
+<footer id="contact"><div class="w"><h2 id="ft"></h2><p class="p" id="close"></p><div class="ct" id="ct"></div>
+<p class="note">© Rescue Lantern™</p></div></footer>
+
+<script>
+/* ===== CONTACT CONFIG — edit only these six values ===== */
+const CONTACT={
+ PHONE_PRIMARY:"[INSERT_PHONE_1]",PHONE_SECONDARY:"[INSERT_PHONE_2]",
+ EMAIL_PRIMARY:"[INSERT_EMAIL_1]",EMAIL_SECONDARY:"[INSERT_EMAIL_2]",
+ WHATSAPP_PRIMARY:"[INSERT_WHATSAPP_URL_1]",WHATSAPP_SECONDARY:"[INSERT_WHATSAPP_URL_2]"};
+/* ===== GEO CONFIG — optional same-origin endpoint returning an ISO country code (plain text "loc=XX" or JSON {country}). Cloudflare's /cdn-cgi/trace works out of the box. ===== */
+const GEO_ENDPOINT="/cdn-cgi/trace";
+const GEO_MAP={IR:'fa',AF:'fa',TJ:'ru',RU:'ru',BY:'ru',KZ:'ru',KG:'ru',
+ SA:'ar',AE:'ar',EG:'ar',IQ:'ar',JO:'ar',KW:'ar',QA:'ar',BH:'ar',OM:'ar',YE:'ar',SY:'ar',LB:'ar',LY:'ar',DZ:'ar',MA:'ar',TN:'ar',SD:'ar',PS:'ar'};
+
+const L={
+en:{dir:'ltr',name:'English',title:'Rescue Lantern™ — Integrated Emergency-Response Ecosystem',desc:'An integrated emergency-response ecosystem designed to support personnel monitoring, resilient communication, victim localization, and AI-assisted operational awareness in challenging environments.',
+nav:['Introduction','Challenge','Ecosystem','Technology','Applications','Contact'],
+award:'Bronze Medal — IFIA 2026 | Switzerland',awardNote:'Award information supplied by the project owner.',
+h1:'When Every Signal Matters, Rescue Intelligence Must Go Further.',
+sub:'Rescue Lantern connects intelligent wearables, resilient communication, localized rescue technologies, and operational intelligence in one coordinated ecosystem.',
+intro:'Rescue Lantern is an integrated emergency-response ecosystem designed for challenging environments where conventional positioning and communication systems may become unreliable. By connecting intelligent wearables, resilient communication infrastructure, localized rescue technologies, and AI-assisted operational visualization, the project aims to strengthen situational awareness before, during, and after an emergency.',
+cta1:'Discuss a Partnership',cta2:'Explore the Technology',
+s2t:'Designed for Environments Where Conventional Systems May Fail.',chT:'The Challenge',
+chP:'Underground mines, tunnels, confined industrial spaces, and structurally damaged buildings can severely restrict satellite positioning and disrupt conventional communication infrastructure. When this happens, rescue teams may have incomplete information about personnel status, last-known operational areas, communication availability, and environmental conditions.',
+ch:['Reduced communication availability','Limited visibility of personnel status','Difficult victim localization','Fragmented operational information'],
+soT:'The Rescue Lantern Approach',soP:'Rescue Lantern brings personnel monitoring, multi-layer communication, distributed processing, localized victim detection, and centralized operational intelligence into one coordinated architecture. Rather than depending on a single technology, the ecosystem is designed to combine complementary capabilities according to the operational environment.',
+frag:'FRAGMENTED INFORMATION',integ:'INTEGRATED OPERATIONAL AWARENESS',
+s3t:'The Rescue Lantern Ecosystem',
+comps:[['Rescue Wristband','An intelligent wearable designed to support personnel monitoring, emergency detection, low-power communication, and close-range rescue functions.','Sensors depending on configuration: heart rate, SpO₂, temperature, motion, battery status, manual SOS.'],
+['Smart Industrial Vest','An industrial wearable platform designed to extend personnel monitoring with additional sensing capacity, modular integration, and support for demanding operational environments.','Optional, configuration-dependent sensing: CO, methane, VOC, pressure, physiological indicators.'],
+['Intelligent Gateway Network','Distributed communication and edge-processing nodes designed to collect operational information, filter and organize data, and forward relevant information through available communication paths.','Data collection · preliminary processing · communication bridging · operational history · network resilience'],
+['Seeker System','Portable and static rescue devices designed to assist search teams with proximity detection, magnetic activation, and close-range victim confirmation.','Portable Seekers can activate compatible wearable rescue functions at close range.'],
+['Optional Drone Relay Nodes','Deployable aerial communication relays intended to extend connectivity when fixed infrastructure is unavailable or insufficient.','An optional enhancement — not required by the core ecosystem.'],
+['AI Command Center','A centralized operational interface that consolidates available field information to support incident awareness, resource coordination, operational analysis, and human decision-making.','AI provides decision support. Final rescue decisions remain with responsible human operators.'],
+['Digital Twin / Operational Model','An operational visualization environment designed to combine available infrastructure information with field data, helping coordinators interpret personnel status, incident areas, infrastructure conditions, and rescue progress.','Concept and software architecture; not presented as a validated real-time 3D product.']],
+flow:['WEARABLES + ENVIRONMENTAL SENSORS','GATEWAYS + AVAILABLE COMMUNICATION PATHS','EDGE PROCESSING + DATA AGGREGATION','AI-ASSISTED COMMAND CENTER','DIGITAL OPERATIONAL MODEL + HUMAN DECISION-MAKING'],
+sk:'Portable Seekers — supporting close-range component',dr:'Optional Drone Relay Nodes — supporting communication extension',lg1:'Solid boxes: information flow of the core architecture',lg2:'Dashed boxes: supporting / optional, conceptual relationships',
+aiNote:'Component capabilities are design intentions and depend on final configuration; they are not independently validated performance claims.',
+s4t:'From Routine Monitoring to Close-Range Rescue Support.',
+st:[['STAGE 01 — ROUTINE AWARENESS','During routine operations, compatible wearables periodically transmit lightweight operational information to nearby Gateways. This can help maintain records of device status, communication history, and other configured monitoring data while conserving power.'],
+['STAGE 02 — EMERGENCY RESPONSE','When configured emergency conditions are detected, the wearable can transition to Emergency Mode. Depending on the implementation, this may involve prioritized communications, continued incident monitoring, and readiness for additional rescue functions.'],
+['STAGE 03 — CLOSE-RANGE CONFIRMATION','Rescue teams use available operational records and search equipment to refine the search area. As responders approach a compatible wearable, the Seeker can initiate low-frequency magnetic activation, enabling configured close-range functions such as magnetic beacon transmission, Bluetooth proximity signaling, and audible alerts.']],
+tech:['Low-power communication','LoRa (where configured)','Bluetooth Low Energy','Low-frequency magnetic activation','Mesh-supported communication','Distributed edge processing','AI-assisted decision support','Digital Twin visualization'],
+qual:'Operational performance, communication coverage, and localization accuracy depend on the hardware configuration, infrastructure availability, deployment conditions, and environmental characteristics.',
+s5t:'Built Around the Needs of High-Risk Operations.',s5p:'Rescue Lantern is intended to support organizations responsible for personnel safety and emergency preparedness in environments where maintaining operational awareness is particularly challenging.',
+apps:['Underground mining','Metro and railway infrastructure','Tunnel construction','Industrial facilities and hazardous operations','Fire, rescue, and civil defense','Critical infrastructure and emergency management'],
+road:'The project follows a phased development strategy covering engineering development, laboratory validation, field evaluation, certification, initial production, and broader market expansion. This is a roadmap, not a statement that every phase is complete.',
+paths:[['Technical Evaluation','Explore the architecture, discuss deployment requirements, and assess potential technical integration.'],['Pilot Deployment','Discuss the requirements for a controlled field evaluation and potential operational partners.'],['Strategic Partnership','Explore industrial collaboration, research partnerships, manufacturing, commercialization, and investment opportunities.']],
+cta3:'Start a Conversation',cta4:'Discuss a Technical Evaluation',ft:'Contact',
+close:'Rescue Lantern strengthens existing emergency-response procedures through intelligent integration. It is designed to support the people responsible for making critical decisions.',
+ph:'Phone',em:'Email',wa:'WhatsApp',unset:'Not yet configured',langLabel:'Language'},
+
+fa:{dir:'rtl',name:'فارسی',title:'Rescue Lantern™ — اکوسیستم یکپارچه واکنش در شرایط اضطراری',desc:'اکوسیستمی یکپارچه برای پشتیبانی از پایش نیروها، ارتباطات مقاوم، مکان‌یابی مصدومان و آگاهی عملیاتی مبتنی بر هوش مصنوعی در محیط‌های چالش‌برانگیز.',
+nav:['معرفی','چالش','اکوسیستم','فناوری','کاربردها','تماس'],
+award:'مدال برنز — IFIA ۲۰۲۶ | سوئیس',awardNote:'اطلاعات این جایزه توسط مالک پروژه ارائه شده است.',
+h1:'وقتی هر سیگنال اهمیت دارد، هوشمندی امداد باید فراتر برود.',
+sub:'Rescue Lantern پوشیدنی‌های هوشمند، ارتباطات مقاوم، فناوری‌های امداد موضعی و هوشمندی عملیاتی را در یک اکوسیستم هماهنگ به هم متصل می‌کند.',
+intro:'Rescue Lantern یک اکوسیستم یکپارچه واکنش اضطراری است که برای محیط‌های دشواری طراحی شده که در آن‌ها سامانه‌های متعارف موقعیت‌یابی و ارتباطی ممکن است غیرقابل اتکا شوند. این پروژه با اتصال پوشیدنی‌های هوشمند، زیرساخت ارتباطی مقاوم، فناوری‌های امداد موضعی و نمایش عملیاتی مبتنی بر هوش مصنوعی، می‌کوشد آگاهی وضعیتی را پیش از حادثه، در حین آن و پس از آن تقویت کند.',
+cta1:'گفت‌وگو درباره همکاری',cta2:'آشنایی با فناوری',
+s2t:'طراحی‌شده برای محیط‌هایی که سامانه‌های متعارف ممکن است در آن‌ها از کار بیفتند.',chT:'چالش',
+chP:'معادن زیرزمینی، تونل‌ها، فضاهای صنعتی محصور و ساختمان‌های آسیب‌دیده می‌توانند موقعیت‌یابی ماهواره‌ای را به‌شدت محدود و زیرساخت ارتباطی متعارف را مختل کنند. در این شرایط، تیم‌های امداد ممکن است اطلاعات ناقصی درباره وضعیت نیروها، آخرین محدوده‌های عملیاتی شناخته‌شده، دسترسی ارتباطی و شرایط محیطی داشته باشند.',
+ch:['کاهش دسترسی به ارتباطات','دید محدود نسبت به وضعیت نیروها','دشواری مکان‌یابی مصدومان','پراکندگی اطلاعات عملیاتی'],
+soT:'رویکرد Rescue Lantern',soP:'Rescue Lantern پایش نیروها، ارتباطات چندلایه، پردازش توزیع‌شده، شناسایی موضعی مصدومان و هوشمندی عملیاتی متمرکز را در یک معماری هماهنگ گرد هم می‌آورد. اکوسیستم به‌جای تکیه بر یک فناوری واحد، برای ترکیب قابلیت‌های مکمل متناسب با محیط عملیاتی طراحی شده است.',
+frag:'اطلاعات پراکنده',integ:'آگاهی عملیاتی یکپارچه',
+s3t:'اکوسیستم Rescue Lantern',
+comps:[['مچ‌بند امداد','پوشیدنی هوشمند برای پشتیبانی از پایش نیروها، تشخیص وضعیت اضطراری، ارتباط کم‌مصرف و عملکردهای امدادی در فاصله نزدیک.','حسگرها بسته به پیکربندی: ضربان قلب، SpO₂، دما، حرکت، وضعیت باتری، SOS دستی.'],
+['جلیقه هوشمند صنعتی','پلتفرم پوشیدنی صنعتی برای گسترش پایش نیروها با ظرفیت حسگری بیشتر، یکپارچه‌سازی ماژولار و پشتیبانی از محیط‌های عملیاتی سخت.','حسگرهای اختیاری و وابسته به پیکربندی: CO، متان، VOC، فشار، شاخص‌های فیزیولوژیک.'],
+['شبکه Gateway هوشمند','گره‌های ارتباطی و پردازش لبه‌ای توزیع‌شده برای جمع‌آوری اطلاعات عملیاتی، پالایش و سازمان‌دهی داده‌ها و ارسال اطلاعات مرتبط از مسیرهای ارتباطی موجود.','جمع‌آوری داده · پردازش اولیه · پل ارتباطی · سابقه عملیاتی · تاب‌آوری شبکه'],
+['سامانه Seeker','دستگاه‌های امدادی قابل‌حمل و ثابت برای کمک به تیم‌های جست‌وجو در تشخیص مجاورت، فعال‌سازی مغناطیسی و تأیید مصدوم در فاصله نزدیک.','Seekerهای قابل‌حمل می‌توانند عملکردهای امدادی پوشیدنی‌های سازگار را در فاصله نزدیک فعال کنند.'],
+['گره‌های رله پهپادی (اختیاری)','رله‌های ارتباطی هوایی قابل‌استقرار برای گسترش اتصال، هنگامی که زیرساخت ثابت در دسترس یا کافی نیست.','ارتقای اختیاری است؛ هسته اکوسیستم به آن نیاز ندارد.'],
+['مرکز فرماندهی هوشمند (AI)','رابط عملیاتی متمرکز که اطلاعات میدانی موجود را برای پشتیبانی از آگاهی از حادثه، هماهنگی منابع، تحلیل عملیاتی و تصمیم‌گیری انسانی یکجا می‌کند.','هوش مصنوعی پشتیبان تصمیم است. تصمیم نهایی امداد با اپراتورهای انسانیِ مسئول است.'],
+['دوقلوی دیجیتال / مدل عملیاتی','محیط نمایش عملیاتی برای ترکیب اطلاعات زیرساختی موجود با داده‌های میدانی تا هماهنگ‌کنندگان وضعیت نیروها، محدوده حادثه، شرایط زیرساخت و پیشرفت امداد را بهتر تفسیر کنند.','در سطح مفهوم و معماری نرم‌افزار؛ به‌عنوان محصول سه‌بعدی بلادرنگ اعتبارسنجی‌شده ارائه نمی‌شود.']],
+flow:['پوشیدنی‌ها + حسگرهای محیطی','Gatewayها + مسیرهای ارتباطی موجود','پردازش لبه‌ای + تجمیع داده','مرکز فرماندهی با کمک هوش مصنوعی','مدل عملیاتی دیجیتال + تصمیم‌گیری انسانی'],
+sk:'Seekerهای قابل‌حمل — مؤلفه پشتیبان در فاصله نزدیک',dr:'گره‌های رله پهپادی اختیاری — پشتیبان گسترش ارتباط',lg1:'کادرهای توپر: جریان اطلاعات در معماری اصلی',lg2:'کادرهای خط‌چین: مؤلفه‌های پشتیبان/اختیاری و روابط مفهومی',
+aiNote:'قابلیت‌های مؤلفه‌ها نیت طراحی هستند، به پیکربندی نهایی بستگی دارند و ادعای عملکرد اعتبارسنجی‌شده نیستند.',
+s4t:'از پایش روزمره تا پشتیبانی امداد در فاصله نزدیک.',
+st:[['مرحله ۰۱ — آگاهی روزمره','در عملیات روزمره، پوشیدنی‌های سازگار به‌صورت دوره‌ای اطلاعات عملیاتی سبک را به Gatewayهای مجاور ارسال می‌کنند. این کار می‌تواند ضمن صرفه‌جویی در انرژی، به نگهداری سوابق وضعیت دستگاه، تاریخچه ارتباط و سایر داده‌های پایش پیکربندی‌شده کمک کند.'],
+['مرحله ۰۲ — واکنش اضطراری','با شناسایی شرایط اضطراریِ پیکربندی‌شده، پوشیدنی می‌تواند به حالت اضطراری برود. بسته به پیاده‌سازی، این امر ممکن است شامل ارتباطات اولویت‌دار، پایش مستمر حادثه و آمادگی برای عملکردهای امدادی بیشتر باشد.'],
+['مرحله ۰۳ — تأیید در فاصله نزدیک','تیم‌های امداد با سوابق عملیاتی موجود و تجهیزات جست‌وجو محدوده را دقیق‌تر می‌کنند. با نزدیک شدن امدادگران به پوشیدنی سازگار، Seeker می‌تواند فعال‌سازی مغناطیسی فرکانس‌پایین را آغاز کند و عملکردهای پیکربندی‌شده‌ی نزدیک، مانند بیکن مغناطیسی، سیگنال مجاورت بلوتوث و هشدار صوتی را فعال کند.']],
+tech:['ارتباط کم‌مصرف','LoRa (در صورت پیکربندی)','Bluetooth Low Energy','فعال‌سازی مغناطیسی فرکانس‌پایین','ارتباط مبتنی بر مش','پردازش لبه‌ای توزیع‌شده','پشتیبانی تصمیم با هوش مصنوعی','نمایش دوقلوی دیجیتال'],
+qual:'عملکرد عملیاتی، پوشش ارتباطی و دقت مکان‌یابی به پیکربندی سخت‌افزار، دسترسی به زیرساخت، شرایط استقرار و ویژگی‌های محیطی بستگی دارد.',
+s5t:'ساخته‌شده بر پایه نیازهای عملیات پرخطر.',s5p:'Rescue Lantern برای پشتیبانی از سازمان‌هایی در نظر گرفته شده که مسئول ایمنی نیروها و آمادگی اضطراری در محیط‌هایی‌اند که حفظ آگاهی عملیاتی در آن‌ها به‌ویژه دشوار است.',
+apps:['معدن‌کاری زیرزمینی','زیرساخت مترو و راه‌آهن','احداث تونل','تأسیسات صنعتی و عملیات پرخطر','آتش‌نشانی، امداد و پدافند غیرعامل','زیرساخت‌های حیاتی و مدیریت بحران'],
+road:'پروژه از راهبرد توسعه مرحله‌ای پیروی می‌کند: توسعه مهندسی، اعتبارسنجی آزمایشگاهی، ارزیابی میدانی، گواهی‌نامه، تولید اولیه و گسترش بازار. این یک نقشه راه است، نه ادعای تکمیل همه مراحل.',
+paths:[['ارزیابی فنی','بررسی معماری، گفت‌وگو درباره الزامات استقرار و ارزیابی امکان یکپارچه‌سازی فنی.'],['استقرار آزمایشی','بحث درباره الزامات یک ارزیابی میدانی کنترل‌شده و شرکای عملیاتی بالقوه.'],['مشارکت راهبردی','بررسی همکاری صنعتی، مشارکت پژوهشی، ساخت، تجاری‌سازی و فرصت‌های سرمایه‌گذاری.']],
+cta3:'شروع گفت‌وگو',cta4:'درخواست ارزیابی فنی',ft:'تماس',
+close:'Rescue Lantern رویه‌های موجود واکنش اضطراری را از طریق یکپارچه‌سازی هوشمند تقویت می‌کند. این سامانه برای پشتیبانی از کسانی طراحی شده که مسئول تصمیم‌های حیاتی‌اند.',
+ph:'تلفن',em:'ایمیل',wa:'واتس‌اپ',unset:'هنوز تنظیم نشده',langLabel:'زبان'},
+
+ar:{dir:'rtl',name:'العربية',title:'Rescue Lantern™ — منظومة متكاملة للاستجابة للطوارئ',desc:'منظومة متكاملة للاستجابة للطوارئ مصمَّمة لدعم مراقبة الأفراد والاتصالات المرنة وتحديد مواقع المصابين والوعي التشغيلي بمساعدة الذكاء الاصطناعي في البيئات الصعبة.',
+nav:['المقدمة','التحدي','المنظومة','التقنية','التطبيقات','اتصل بنا'],
+award:'الميدالية البرونزية — IFIA 2026 | سويسرا',awardNote:'معلومات الجائزة مقدَّمة من مالك المشروع.',
+h1:'حين تكون كل إشارة مهمة، يجب أن يذهب ذكاء الإنقاذ إلى أبعد.',
+sub:'يربط Rescue Lantern الأجهزة القابلة للارتداء الذكية والاتصالات المرنة وتقنيات الإنقاذ الموضعية والذكاء التشغيلي في منظومة واحدة متناسقة.',
+intro:'Rescue Lantern منظومة متكاملة للاستجابة للطوارئ، صُمّمت لبيئات صعبة قد تصبح فيها أنظمة تحديد المواقع والاتصال التقليدية غير موثوقة. ومن خلال ربط الأجهزة الذكية القابلة للارتداء وبنية الاتصال المرنة وتقنيات الإنقاذ الموضعية والعرض التشغيلي المدعوم بالذكاء الاصطناعي، يهدف المشروع إلى تعزيز الوعي بالموقف قبل الطوارئ وأثناءها وبعدها.',
+cta1:'ناقشوا معنا الشراكة',cta2:'اكتشف التقنية',
+s2t:'مصمَّم للبيئات التي قد تفشل فيها الأنظمة التقليدية.',chT:'التحدي',
+chP:'يمكن للمناجم الجوفية والأنفاق والمساحات الصناعية المغلقة والمباني المتضررة إنشائيًا أن تحدّ بشدة من تحديد المواقع عبر الأقمار الصناعية وأن تعطّل بنية الاتصال التقليدية. وعندها قد تكون لدى فرق الإنقاذ معلومات ناقصة عن حالة الأفراد وآخر مناطق العمل المعروفة وتوافر الاتصال والظروف البيئية.',
+ch:['تراجع توافر الاتصالات','محدودية الرؤية لحالة الأفراد','صعوبة تحديد مواقع المصابين','تشتت المعلومات التشغيلية'],
+soT:'نهج Rescue Lantern',soP:'يجمع Rescue Lantern مراقبة الأفراد والاتصالات متعددة الطبقات والمعالجة الموزعة والكشف الموضعي عن المصابين والذكاء التشغيلي المركزي في بنية واحدة متناسقة. وبدلًا من الاعتماد على تقنية واحدة، صُمّمت المنظومة للجمع بين قدرات متكاملة بحسب البيئة التشغيلية.',
+frag:'معلومات مشتتة',integ:'وعي تشغيلي متكامل',
+s3t:'منظومة Rescue Lantern',
+comps:[['سوار الإنقاذ','جهاز ذكي قابل للارتداء مصمَّم لدعم مراقبة الأفراد والكشف عن الطوارئ والاتصال منخفض الطاقة ووظائف الإنقاذ عن قرب.','المستشعرات بحسب الإعداد: معدل ضربات القلب، SpO₂، الحرارة، الحركة، حالة البطارية، SOS يدوي.'],
+['السترة الصناعية الذكية','منصة صناعية قابلة للارتداء لتوسيع مراقبة الأفراد بقدرة استشعار إضافية وتكامل نمطي ودعم للبيئات التشغيلية القاسية.','استشعار اختياري يعتمد على الإعداد: CO، الميثان، VOC، الضغط، المؤشرات الفسيولوجية.'],
+['شبكة Gateway الذكية','عُقد اتصال ومعالجة طرفية موزعة مصمَّمة لجمع المعلومات التشغيلية وتصفية البيانات وتنظيمها وإرسال المهم منها عبر مسارات الاتصال المتاحة.','جمع البيانات · معالجة أولية · ربط الاتصال · سجل تشغيلي · مرونة الشبكة'],
+['منظومة Seeker','أجهزة إنقاذ محمولة وثابتة مصمَّمة لمساعدة فرق البحث في كشف القرب والتنشيط المغناطيسي وتأكيد موقع المصاب عن قرب.','يمكن لأجهزة Seeker المحمولة تنشيط وظائف الإنقاذ في الأجهزة القابلة للارتداء المتوافقة عن قرب.'],
+['عُقد ترحيل بالطائرات المسيّرة (اختيارية)','محطات ترحيل اتصال جوية قابلة للنشر لتوسيع الاتصال حين تكون البنية الثابتة غير متاحة أو غير كافية.','تحسين اختياري وليس مكوّنًا إلزاميًا في المنظومة الأساسية.'],
+['مركز القيادة بالذكاء الاصطناعي','واجهة تشغيلية مركزية تجمع المعلومات الميدانية المتاحة لدعم الوعي بالحادث وتنسيق الموارد والتحليل التشغيلي واتخاذ القرار البشري.','الذكاء الاصطناعي يدعم القرار؛ وتبقى قرارات الإنقاذ النهائية بيد المشغّلين المسؤولين.'],
+['التوأم الرقمي / النموذج التشغيلي','بيئة عرض تشغيلية تجمع معلومات البنية التحتية المتاحة مع البيانات الميدانية لمساعدة المنسّقين على تفسير حالة الأفراد ومناطق الحادث وحالة البنية التحتية وتقدم الإنقاذ.','مفهوم وبنية برمجية؛ ولا يُقدَّم كمنتج ثلاثي الأبعاد لحظي مُثبَت.']],
+flow:['أجهزة قابلة للارتداء + مستشعرات بيئية','Gateways + مسارات الاتصال المتاحة','المعالجة الطرفية + تجميع البيانات','مركز القيادة بدعم الذكاء الاصطناعي','النموذج التشغيلي الرقمي + القرار البشري'],
+sk:'أجهزة Seeker المحمولة — مكوّن داعم عن قرب',dr:'عُقد الترحيل بالطائرات المسيّرة الاختيارية — دعم توسيع الاتصال',lg1:'المربعات المتصلة: تدفق المعلومات في البنية الأساسية',lg2:'المربعات المتقطعة: مكوّنات داعمة/اختيارية وعلاقات مفاهيمية',
+aiNote:'قدرات المكوّنات تعبّر عن نية التصميم وتعتمد على الإعداد النهائي، وليست ادعاءات أداء مُثبَتة بشكل مستقل.',
+s4t:'من المراقبة الروتينية إلى دعم الإنقاذ عن قرب.',
+st:[['المرحلة 01 — الوعي الروتيني','أثناء التشغيل الروتيني ترسل الأجهزة القابلة للارتداء المتوافقة معلومات تشغيلية خفيفة بشكل دوري إلى Gateways القريبة. وقد يساعد ذلك في الاحتفاظ بسجلات حالة الجهاز وسجل الاتصال وبيانات المراقبة المُعدّة الأخرى مع توفير الطاقة.'],
+['المرحلة 02 — الاستجابة للطوارئ','عند رصد حالات الطوارئ المُعدّة، يمكن للجهاز الانتقال إلى وضع الطوارئ. وبحسب التنفيذ قد يشمل ذلك اتصالات ذات أولوية ومراقبة مستمرة للحادث والاستعداد لوظائف إنقاذ إضافية.'],
+['المرحلة 03 — التأكيد عن قرب','تستخدم فرق الإنقاذ السجلات التشغيلية المتاحة ومعدات البحث لتضييق منطقة البحث. وعند اقتراب المسعفين من جهاز متوافق، يمكن لـ Seeker بدء التنشيط المغناطيسي منخفض التردد لتفعيل وظائف القرب المُعدّة، مثل إرسال المنارة المغناطيسية وإشارة القرب عبر Bluetooth والتنبيهات الصوتية.']],
+tech:['اتصال منخفض الطاقة','LoRa (عند الإعداد)','Bluetooth Low Energy','التنشيط المغناطيسي منخفض التردد','اتصال مدعوم بالشبكة الشبكية (Mesh)','معالجة طرفية موزعة','دعم القرار بالذكاء الاصطناعي','عرض التوأم الرقمي'],
+qual:'يعتمد الأداء التشغيلي وتغطية الاتصال ودقة تحديد الموقع على تكوين العتاد وتوافر البنية التحتية وظروف النشر والخصائص البيئية.',
+s5t:'مبني حول احتياجات العمليات عالية المخاطر.',s5p:'يهدف Rescue Lantern إلى دعم المؤسسات المسؤولة عن سلامة الأفراد والجاهزية للطوارئ في بيئات يصعب فيها الحفاظ على الوعي التشغيلي.',
+apps:['التعدين الجوفي','بنية المترو والسكك الحديدية','إنشاء الأنفاق','المنشآت الصناعية والعمليات الخطرة','الإطفاء والإنقاذ والدفاع المدني','البنية التحتية الحيوية وإدارة الطوارئ'],
+road:'يتبع المشروع استراتيجية تطوير مرحلية تشمل التطوير الهندسي والتحقق المخبري والتقييم الميداني والاعتماد والإنتاج الأولي والتوسع الأوسع في السوق. وهذه خارطة طريق، لا تعني اكتمال كل المراحل.',
+paths:[['التقييم التقني','استكشاف البنية ومناقشة متطلبات النشر وتقييم إمكانية التكامل التقني.'],['النشر التجريبي','مناقشة متطلبات تقييم ميداني مضبوط والشركاء التشغيليين المحتملين.'],['الشراكة الاستراتيجية','استكشاف التعاون الصناعي والشراكات البحثية والتصنيع والتسويق التجاري وفرص الاستثمار.']],
+cta3:'ابدأ حوارًا',cta4:'ناقش تقييمًا تقنيًا',ft:'اتصل بنا',
+close:'يعزز Rescue Lantern إجراءات الاستجابة للطوارئ القائمة عبر التكامل الذكي، وقد صُمّم لدعم المسؤولين عن اتخاذ القرارات الحاسمة.',
+ph:'هاتف',em:'بريد إلكتروني',wa:'واتساب',unset:'لم يُضبط بعد',langLabel:'اللغة'},
+
+ru:{dir:'ltr',name:'Русский',title:'Rescue Lantern™ — интегрированная экосистема аварийного реагирования',desc:'Интегрированная экосистема аварийного реагирования для мониторинга персонала, устойчивой связи, локализации пострадавших и оперативной ситуационной осведомлённости с поддержкой ИИ в сложных условиях.',
+nav:['О проекте','Проблема','Экосистема','Технологии','Применение','Контакты'],
+award:'Бронзовая медаль — IFIA 2026 | Швейцария',awardNote:'Информация о награде предоставлена владельцем проекта.',
+h1:'Когда важен каждый сигнал, интеллект спасения должен идти дальше.',
+sub:'Rescue Lantern объединяет умные носимые устройства, устойчивую связь, локальные спасательные технологии и оперативную аналитику в единую согласованную экосистему.',
+intro:'Rescue Lantern — интегрированная экосистема аварийного реагирования для сложных условий, где привычные системы позиционирования и связи могут стать ненадёжными. Объединяя умные носимые устройства, устойчивую коммуникационную инфраструктуру, локальные спасательные технологии и оперативную визуализацию с поддержкой ИИ, проект призван повысить ситуационную осведомлённость до, во время и после аварии.',
+cta1:'Обсудить партнёрство',cta2:'Изучить технологию',
+s2t:'Создано для условий, где привычные системы могут отказать.',chT:'Проблема',
+chP:'В подземных шахтах, тоннелях, замкнутых промышленных помещениях и конструктивно повреждённых зданиях спутниковое позиционирование может сильно ограничиваться, а обычная связь — нарушаться. В этом случае у спасателей может не быть полной информации о состоянии персонала, последних известных рабочих зонах, доступности связи и условиях среды.',
+ch:['Ограниченная доступность связи','Слабая видимость состояния персонала','Сложность локализации пострадавших','Разрозненная оперативная информация'],
+soT:'Подход Rescue Lantern',soP:'Rescue Lantern объединяет мониторинг персонала, многоуровневую связь, распределённую обработку, локальное обнаружение пострадавших и централизованную оперативную аналитику в единой архитектуре. Вместо опоры на одну технологию экосистема рассчитана на сочетание взаимодополняющих возможностей в зависимости от условий.',
+frag:'РАЗРОЗНЕННАЯ ИНФОРМАЦИЯ',integ:'ЕДИНАЯ ОПЕРАТИВНАЯ КАРТИНА',
+s3t:'Экосистема Rescue Lantern',
+comps:[['Спасательный браслет','Умное носимое устройство для мониторинга персонала, обнаружения аварийных ситуаций, маломощной связи и спасательных функций на близком расстоянии.','Датчики зависят от конфигурации: пульс, SpO₂, температура, движение, состояние батареи, ручной SOS.'],
+['Умный промышленный жилет','Промышленная носимая платформа, расширяющая мониторинг персонала дополнительными датчиками, модульной интеграцией и поддержкой тяжёлых условий эксплуатации.','Опциональные датчики, зависящие от конфигурации: CO, метан, ЛОС, давление, физиологические показатели.'],
+['Сеть интеллектуальных Gateway','Распределённые узлы связи и периферийной обработки: сбор оперативной информации, фильтрация и упорядочивание данных, передача важного по доступным каналам.','Сбор данных · предварительная обработка · мост связи · оперативная история · устойчивость сети'],
+['Система Seeker','Портативные и стационарные спасательные устройства для помощи поисковым группам: обнаружение близости, магнитная активация и подтверждение пострадавшего вблизи.','Портативные Seeker могут активировать спасательные функции совместимых носимых устройств на близком расстоянии.'],
+['Опциональные дроны-ретрансляторы','Развёртываемые воздушные ретрансляторы для расширения связи, когда стационарная инфраструктура недоступна или недостаточна.','Опциональное усиление, не обязательное для базовой экосистемы.'],
+['Командный центр с ИИ','Централизованный оперативный интерфейс, объединяющий доступную полевую информацию для осведомлённости об инциденте, координации ресурсов, анализа и принятия решений человеком.','ИИ поддерживает решения. Окончательные решения остаются за ответственными операторами.'],
+['Цифровой двойник / оперативная модель','Среда визуализации, сочетающая доступные данные об инфраструктуре с полевыми данными и помогающая оценивать состояние персонала, зоны инцидента, инфраструктуру и ход спасения.','Концепция и программная архитектура; не позиционируется как проверенный 3D-продукт реального времени.']],
+flow:['НОСИМЫЕ УСТРОЙСТВА + ДАТЧИКИ СРЕДЫ','GATEWAY + ДОСТУПНЫЕ КАНАЛЫ СВЯЗИ','ПЕРИФЕРИЙНАЯ ОБРАБОТКА + АГРЕГАЦИЯ ДАННЫХ','КОМАНДНЫЙ ЦЕНТР С ПОДДЕРЖКОЙ ИИ','ЦИФРОВАЯ ОПЕРАТИВНАЯ МОДЕЛЬ + РЕШЕНИЕ ЧЕЛОВЕКА'],
+sk:'Портативные Seeker — вспомогательный компонент ближнего действия',dr:'Опциональные дроны-ретрансляторы — расширение связи',lg1:'Сплошные рамки: информационный поток базовой архитектуры',lg2:'Пунктирные рамки: вспомогательные/опциональные и концептуальные связи',
+aiNote:'Возможности компонентов отражают замысел проекта, зависят от итоговой конфигурации и не являются независимо подтверждёнными характеристиками.',
+s4t:'От рутинного мониторинга к спасению на близком расстоянии.',
+st:[['ЭТАП 01 — ПОВСЕДНЕВНАЯ ОСВЕДОМЛЁННОСТЬ','В обычном режиме совместимые носимые устройства периодически передают компактные оперативные данные ближайшим Gateway. Это помогает вести записи о состоянии устройства, истории связи и других настроенных данных мониторинга, экономя энергию.'],
+['ЭТАП 02 — АВАРИЙНОЕ РЕАГИРОВАНИЕ','При обнаружении настроенных аварийных условий устройство может перейти в аварийный режим. В зависимости от реализации это может включать приоритетную связь, продолжающийся мониторинг инцидента и готовность к дополнительным спасательным функциям.'],
+['ЭТАП 03 — ПОДТВЕРЖДЕНИЕ ВБЛИЗИ','Спасатели используют доступные оперативные записи и поисковое оборудование, чтобы уточнить зону поиска. При приближении к совместимому устройству Seeker может инициировать низкочастотную магнитную активацию, включая настроенные функции ближнего действия: магнитный маяк, Bluetooth-сигнал близости и звуковой сигнал.']],
+tech:['Маломощная связь','LoRa (при наличии в конфигурации)','Bluetooth Low Energy','Низкочастотная магнитная активация','Связь с поддержкой mesh-сети','Распределённая периферийная обработка','Поддержка решений на основе ИИ','Визуализация цифрового двойника'],
+qual:'Эксплуатационные характеристики, покрытие связи и точность локализации зависят от конфигурации оборудования, наличия инфраструктуры, условий развёртывания и особенностей среды.',
+s5t:'Создано для потребностей высокорисковых операций.',s5p:'Rescue Lantern предназначен для организаций, отвечающих за безопасность персонала и аварийную готовность там, где поддерживать оперативную осведомлённость особенно сложно.',
+apps:['Подземная добыча','Метро и железные дороги','Строительство тоннелей','Промышленные объекты и опасные работы','Пожарные, спасательные службы и гражданская оборона','Критическая инфраструктура и управление ЧС'],
+road:'Проект следует поэтапной стратегии: инженерная разработка, лабораторная валидация, полевая оценка, сертификация, начальное производство и расширение рынка. Это дорожная карта, а не утверждение, что все этапы завершены.',
+paths:[['Техническая оценка','Изучение архитектуры, обсуждение требований к развёртыванию и оценка возможной технической интеграции.'],['Пилотное внедрение','Обсуждение требований к контролируемой полевой оценке и возможных операционных партнёров.'],['Стратегическое партнёрство','Промышленное сотрудничество, исследовательские партнёрства, производство, коммерциализация и инвестиции.']],
+cta3:'Начать диалог',cta4:'Обсудить техническую оценку',ft:'Контакты',
+close:'Rescue Lantern усиливает существующие процедуры аварийного реагирования за счёт интеллектуальной интеграции и создан для поддержки людей, принимающих критические решения.',
+ph:'Телефон',em:'Эл. почта',wa:'WhatsApp',unset:'Пока не настроено',langLabel:'Язык'}};
+
+const $=i=>document.getElementById(i),T=(i,v)=>{$(i).textContent=v},H=(i,v)=>{$(i).innerHTML=v};
+const ph=v=>!v||/\[INSERT/.test(v);
+const IC={phone:'<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>',mail:'<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>',wa:'<path d="M3 21l1.7-5A9 9 0 1 1 8 19.3z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-.8.8c-.8-.4-1.600-1.200-2-2l.8-.8-1-2z"/>'};
+function contacts(l){const D=L[l],a=[['phone',D.ph,'PHONE_PRIMARY','tel:'],['phone',D.ph,'PHONE_SECONDARY','tel:'],['mail',D.em,'EMAIL_PRIMARY','mailto:'],['mail',D.em,'EMAIL_SECONDARY','mailto:'],['wa',D.wa,'WHATSAPP_PRIMARY',''],['wa',D.wa,'WHATSAPP_SECONDARY','']];
+ H('ct',a.map(([ic,lb,k,sch])=>{const v=CONTACT[k],svg=`<svg viewBox="0 0 24 24" aria-hidden="true">${IC[ic]}</svg>`;
+  if(ph(v))return `<span class="c off" role="note" aria-label="${lb}: ${D.unset}">${svg}<span>${lb} — ${v||D.unset}</span></span>`;
+  const href=sch?sch+v.replace(/\s/g,''):v,ext=ic==='wa'?' target="_blank" rel="noopener noreferrer"':'';
+  return `<a class="c" href="${href}"${ext} aria-label="${lb}: ${v}">${svg}<span>${ic==='wa'?lb:v}</span></a>`}).join(''))}
+function apply(l,persist){const D=L[l];document.documentElement.lang=l;document.documentElement.dir=D.dir;document.title=D.title;
+ document.querySelector('meta[name=description]').content=D.desc;document.querySelector('meta[property="og:title"]').content=D.title;
+ H('links',D.nav.slice(1).map((n,i)=>`<a href="#${['s2','s3','s4','s5','contact'][i]}">${n}</a>`).join(''));
+ ['award','awardNote','h1','sub','intro','cta1','cta2','s2t','chT','chP','soT','soP','frag','integ','s3t','aiNote','s4t','qual','s5t','s5p','road','cta3','cta4','ft','close'].forEach(k=>T(k==='awardNote'?'awardNote':k,D[k]));
+ T('sk',D.sk);T('dr',D.dr);T('lg1',D.lg1);T('lg2',D.lg2);
+ H('chL',D.ch.map(x=>`<li>${x}</li>`).join(''));
+ H('comps',D.comps.map((c,i)=>`<div class="card"><h3>${c[0]}</h3><p>${c[1]}</p><p class="note" style="margin-top:10px;${i==1||i==4?'color:var(--cu2)':''}">${c[2]}</p></div>`).join(''));
+ H('flow',D.flow.map((f,i)=>`<div class="node rtlok" style="direction:${D.dir}">${f}</div>`+(i<4?'<div class="arrow" aria-hidden="true">↓</div>':'')).join(''));
+ H('tl',D.st.map(s=>`<div class="st"><h3>${s[0]}</h3><p class="p" style="margin:0;font-size:.95rem">${s[1]}</p></div>`).join(''));
+ H('techs',D.tech.map(t=>`<span class="tag">${t}</span>`).join(''));
+ H('apps',D.apps.map((a,i)=>`<div class="card"><span class="num" style="margin-bottom:10px;width:36px;height:36px">${String(i+1).padStart(2,'0')}</span><h3>${a}</h3></div>`).join(''));
+ H('paths',D.paths.map(p=>`<div class="card"><h3 style="color:var(--cu2)">${p[0]}</h3><p>${p[1]}</p></div>`).join(''));
+ $('lb').textContent=({en:'EN',fa:'FA',ar:'AR',ru:'RU'})[l]+' ▾';$('lb').setAttribute('aria-label',D.langLabel+': '+D.name);
+ H('lm',Object.keys(L).map(k=>`<li role="option"><button data-l="${k}" lang="${k}" aria-current="${k===l}">${L[k].name}</button></li>`).join(''));
+ contacts(l);
+ if(persist)try{localStorage.setItem('rl_lang',l)}catch(e){}}
+async function geoLang(){try{const c=new AbortController(),t=setTimeout(()=>c.abort(),1500);const r=await fetch(GEO_ENDPOINT,{signal:c.signal,cache:'no-store'});clearTimeout(t);if(!r.ok)return null;const s=await r.text();let cc;try{cc=JSON.parse(s).country}catch(e){cc=(s.match(/loc=([A-Z]{2})/)||[])[1]}return GEO_MAP[(cc||'').toUpperCase()]||null}catch(e){return null}}
+function browserLang(){for(const n of (navigator.languages||[navigator.language||'']))if(L[n.slice(0,2).toLowerCase()])return n.slice(0,2).toLowerCase();return null}
+let saved=null;try{saved=localStorage.getItem('rl_lang')}catch(e){}
+if(saved&&L[saved])apply(saved);
+else{const b=browserLang();apply(b||'en');
+ geoLang().then(g=>{let s2=null;try{s2=localStorage.getItem('rl_lang')}catch(e){}if(s2)return;
+  /* browser preference wins when it clearly names another supported language; geo is the tiebreaker */
+  if(g&&(!b||b===g||b==='en'))apply(g)})}
+$('lb').onclick=e=>{const o=$('lang').classList.toggle('open');$('lb').setAttribute('aria-expanded',o)};
+$('lm').onclick=e=>{const l=e.target.closest('button')?.dataset.l;if(!l)return;const y=scrollY;apply(l,true);$('lang').classList.remove('open');$('lb').setAttribute('aria-expanded',false);scrollTo(0,y)};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('lang').classList.remove('open');$('lb').focus()}});
+document.addEventListener('click',e=>{if(!e.target.closest('#lang'))$('lang').classList.remove('open')});
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+</script>
+</body>
+</html>
